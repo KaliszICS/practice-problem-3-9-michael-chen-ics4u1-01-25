@@ -78,7 +78,7 @@ public class PracticeProblemTest {
             Method method = testClass.getDeclaredMethod("towerOfHanoi", cArg);
             String[] result = (String[])method.invoke(null, 4);
             assertArrayEquals(new String[]{"LM", "LR", "MR", "LM", "RL", "RM", "LM", 
-                                          "LR", "ML", "MR", "RL", "RM", "LR", "ML", "MR"}, result);
+                                          "LR", "MR", "ML", "RL", "MR", "LM", "LR", "MR"}, result);
         } catch (NoSuchMethodException e) {
             fail("Method does not exist");
         } catch(Exception e) {
@@ -94,10 +94,11 @@ public class PracticeProblemTest {
             Class<?>[] cArg = {int.class};
             Method method = testClass.getDeclaredMethod("towerOfHanoi", cArg);
             String[] result = (String[])method.invoke(null, 5);
-            assertArrayEquals(new String[]{"LR", "LM", "RM", "LR", "ML", "MR", "LR",
-                                          "LM", "RL", "RM", "ML", "MR", "RL", "RM", "LM",
-                                          "LR", "ML", "MR", "RL", "RM", "LR", "ML", "MR",
-                                          "RL", "RM", "LR", "ML", "MR", "RL", "RM", "LR"}, result);
+            assertArrayEquals(new String[]{"LR", "LM", "RM", "LR", "ML", "MR", "LR", 
+                                          "LM", "RM", "RL", "ML", "RM", "LR", "LM", "RM",
+                                          "LR", "ML", "MR", "LR", "ML", "RM", "RL", "ML",
+                                          "MR", "LR", "LM", "RM", "LR", "ML", "MR", "LR"}, result);
+            
         } catch (NoSuchMethodException e) {
             fail("Method does not exist");
         } catch(Exception e) {
